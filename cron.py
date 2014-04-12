@@ -1,7 +1,7 @@
 from twisted.internet import reactor
 from scrapy.crawler import Crawler
 from scrapy import log
-from testspiders.spiders.followall import FollowAllSpider
+from crawler.spiders.holidayforum import HolidayForumSpider
 from scrapy.utils.project import get_project_settings
 
 def setup_crawler():
