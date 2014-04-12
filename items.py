@@ -6,6 +6,13 @@
 from scrapy.item import Item, Field
 
 class CrawlerItem(Item):
-    # define the fields for your item here like:
-    # name = Field()
-    pass
+    url = Field()
+    site = Field()
+    author = Field()
+    texts = Field()
+    time = Field()
+    crawltime = Field()
+    source = Field()
+    location = Field()
+    identifer = Field()
+    key = Field()

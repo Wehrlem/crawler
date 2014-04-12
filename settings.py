@@ -13,3 +13,10 @@ NEWSPIDER_MODULE = 'crawler.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'crawler (+http://www.yourdomain.com)'
+ITEM_PIPELINES = [
+    'crawler.pipelines.CrawlerPipeline',
+    'scrapy_mongodb.MongoDBPipeline',
+]
+MONGODB_URI = 'mongodb://localhost:27017'
+MONGODB_DATABASE = 'ktidashboard'
+MONGODB_COLLECTION = 'crawler'
