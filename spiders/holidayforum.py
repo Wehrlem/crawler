@@ -44,7 +44,7 @@ class HolidayForumSpider(BaseSpider):
             if getIdentifier(texts,thetime) in self.stored:
                 raise DropItem("Duplicate item found")
             else:
-                item = WebcrawlerItem()
+                item = CrawlerItem()
                 item['url'] = response.url
                 item['texts'] =texts
                 item['time'] = thetime
