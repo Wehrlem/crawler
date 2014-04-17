@@ -4,6 +4,7 @@ from crawler.items import CrawlerItem
 import re
 import codecs
 from crawler.functions import getIdentifier
+from crawler.functions import getKeywords
 from datetime import datetime
 from BeautifulSoup import BeautifulSoup
 from pymongo import MongoClient
