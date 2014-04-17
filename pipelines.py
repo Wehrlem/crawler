@@ -14,7 +14,7 @@ from pymongo import MongoClient
 
 class CrawlerPipeline(object):
     def __init__(self):
-        self.conn = db.connect('localhost','don', 'Marcello_1664', 'knowz')
+        self.conn = db.connect('localhost','don', 'marcello_1664', 'knowz')
         self.conn.set_character_set('utf8')
         self.cursor = self.conn.cursor()
         self.cursor.execute('SET NAMES utf8;')

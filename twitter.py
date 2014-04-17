@@ -12,7 +12,7 @@ try:
     tso.setCount(2) # please dear Mr Twitter, only give us 7 results per page
     tso.setIncludeEntities(False) # and don't give us all those entity information
     #Set up the mysql connection
-    conn = db.connect('localhost','root', '', 'knowz')
+    conn = db.connect('localhost','don', 'marcello_1664', 'knowz')
     conn.set_character_set('utf8')
     cursor = conn.cursor()
     cursor.execute('SET NAMES utf8;')
@@ -20,8 +20,8 @@ try:
     cursor.execute('SET character_set_connection=utf8;')
     #Set up the mongo connection
     client = MongoClient()
-    db = client.webcrawler
-    items = db.webcrawler
+    db = client.ktidashboard
+    items = db.crawler
     stored = items.distinct('identifer')
 
 
