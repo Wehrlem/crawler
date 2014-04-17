@@ -3,7 +3,7 @@ from scrapy.selector import HtmlXPathSelector
 from crawler.items import CrawlerItem
 import re
 import codecs
-from webcrawler.functions import getIdentifier
+from crawler.functions import getIdentifier
 from datetime import datetime
 from BeautifulSoup import BeautifulSoup
 from pymongo import MongoClient
