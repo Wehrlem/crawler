@@ -5,8 +5,9 @@ from pymongo import MongoClient
 from functions import getIdentifier
 from datetime import datetime
 import re
+conn = db.connect('localhost','don', 'marcello_1664', 'knowz')
+
 def execute_twitter():
-    conn = db.connect('localhost','don', 'marcello_1664', 'knowz')
     try:
         tso = TwitterSearchOrder() # create a TwitterSearchOrder object
         tso.setKeywords(['Tourismus']) # let's define all words we would like to have a look for
