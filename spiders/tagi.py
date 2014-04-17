@@ -1,23 +1,23 @@
-from scrapy.spider import BaseSpider
+from scrapy.spider import Spider
 from scrapy.selector import HtmlXPathSelector
-from webcrawler.items import WebcrawlerItem
+from crawler.items import CrawlerItem
 import re
 import codecs
-from webcrawler.functions import getIdentifier
+from crawlercrawler.functions import getIdentifier
 from datetime import datetime
 from BeautifulSoup import BeautifulSoup
 from pymongo import MongoClient
 from scrapy.exceptions import DropItem
 
-class TagiSpider(BaseSpider):
+class TagiSpider(Spider):
     client = MongoClient()
     name = "tagi"
     allowed_domains = [ "tagesanzeiger.ch"]
     keywords = getKeywords(location="")
     for i in keywords:
         start_urls = ['http://www.tagesanzeiger.ch/ajax/tags.html?action=searchArticles&keyword='+i+'&pageId=%s&itemsPerPage=20&order=date' % page for page in xrange(1,100,1)]
-    db = client.webcrawler
-    items = db.webcrawler
+    db = client.ktidashboard
+    items = db.crawler
     stored = items.distinct('identifer')
     def parse(self, response):
         hxs = HtmlXPathSelector(response)
@@ -46,7 +46,7 @@ class TagiSpider(BaseSpider):
             if (indeti in self.stored):
                 raise DropItem("Duplicate item found")
             else:
-                item = WebcrawlerItem()
+                item = CrawlerItem()
                 item['url'] = response.url
                 item['texts'] = s 
                 item['time'] = dates
