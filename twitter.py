@@ -6,6 +6,7 @@ from functions import getIdentifier
 from datetime import datetime
 import re
 def execute_twitter():
+    conn = db.connect('localhost','don', 'marcello_1664', 'knowz')
     try:
         tso = TwitterSearchOrder() # create a TwitterSearchOrder object
         tso.setKeywords(['Tourismus']) # let's define all words we would like to have a look for
@@ -13,7 +14,6 @@ def execute_twitter():
         tso.setCount(2) # please dear Mr Twitter, only give us 7 results per page
         tso.setIncludeEntities(False) # and don't give us all those entity information
         #Set up the mysql connection
-        conn = db.connect('localhost','don', 'marcello_1664', 'knowz')
         conn.set_character_set('utf8')
         cursor = conn.cursor()
         cursor.execute('SET NAMES utf8;')
