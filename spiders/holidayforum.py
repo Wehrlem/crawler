@@ -1,4 +1,4 @@
-from scrapy.spider import BaseSpider
+from scrapy.spider import Spider
 from scrapy.selector import HtmlXPathSelector
 from crawler.items import CrawlerItem
 import re
@@ -9,7 +9,7 @@ from BeautifulSoup import BeautifulSoup
 from pymongo import MongoClient
 from scrapy.exceptions import DropItem
 
-class HolidayForumSpider(BaseSpider):
+class HolidayForumSpider(Spider):
     name = "holidayforum"
     allowed_domains = [ "holidaycheck.ch"]
     start_urls = ["http://www.holidaycheck.ch/forum-Schweiz-id_95.html"]
