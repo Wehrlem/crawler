@@ -30,7 +30,7 @@ class TagiSpider(Spider):
     def parse_advisor(self, response):
         hxs = HtmlXPathSelector(response)
         text = hxs.select('//div[@id="singleLeft"]/p').extract()
-        date = hxs.select('//p[@class="publishedDate"]/text()').extract()
+        date = hxs.select('//span[@class="publishedDate"]/text()').extract()
         dates = date[0].replace('Erstellt: ','')
         dates = datetime.strptime(dates[:-11], '%d.%m.%Y').strftime('%Y-%m-%d')
         s = ""
