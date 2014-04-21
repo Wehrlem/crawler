@@ -14,5 +14,5 @@ def getKeywords(location):
     db = client.ktidashboard
     items = db.keywords
     if location == "":
-        print 'all you need is love'
+        print 'all you need is loveall'
     return 'check'
