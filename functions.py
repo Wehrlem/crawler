@@ -11,7 +11,8 @@ def getIdentifier(input,date):
     
 def getKeywords(location):
     client = MongoClient()
-    db = client.keyword
+    db = client.ktidashboard
+    items = db.keywords
     if location == "":
         print 'all you need is love'
     return 'check'
