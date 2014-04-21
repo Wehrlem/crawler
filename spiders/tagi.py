@@ -31,8 +31,8 @@ class TagiSpider(Spider):
         hxs = HtmlXPathSelector(response)
         text = hxs.select('//div[@id="singleLeft"]/p').extract()
         date = hxs.select('//span[@class="publishedDate"]/text()').extract()
-        dates = date[0].replace('Erstellt: ','')
-        dates = datetime.strptime(dates[:-11], '%d.%m.%Y').strftime('%Y-%m-%d')
+        dates = date[0].replace('(Erstellt: ','')
+        dates = datetime.strptime(dates[:-12], '%d.%m.%Y').strftime('%Y-%m-%d')
         s = ""
         items = []
         for i in range(0,len(text)):
