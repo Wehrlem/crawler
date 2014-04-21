@@ -15,4 +15,4 @@ def getKeywords(location):
     items = db.keywords
     if location == "":
         print 'all you need is loveall'
-    return  ['tourism']
+    return  ['tourismus']
